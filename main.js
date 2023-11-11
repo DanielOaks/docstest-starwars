@@ -1,10 +1,20 @@
 /**
   * Fetch and display Star Wars character data.
   */
-async function fetchCharacters() {
-  let response = await fetch("https://swapi.dev/api/people/?page=1");
-  const data = await response.json();
+async function fetchJsonData(url) {
+  let response = await fetch(url);
+  const jsonData = await response.json();
+  return jsonData;
+}
 
+async function fetchCharacters() {
+  // show loading spinner
+  showLoading();
+
+  // get data from this endpoint
+  const data = await fetchJsonData("https://swapi.dev/api/people/?page=1")
+
+  // make the character table
   var temp = "";
   data.results.forEach((character) => {
     temp += "<tr>";
@@ -12,5 +22,37 @@ async function fetchCharacters() {
     temp += "<td>" + character.birth_year + "</td>";
     temp += "</tr>";
   });
-  document.getElementById("data").innerHTML = temp;
+  document.getElementById("character-data").innerHTML = temp;
+
+  // show data
+  document.getElementById("loading").classList.add('hidden')
+  document.getElementById("character-table").classList.remove('hidden')
+}
+
+async function fetchPlanets() {
+  // show loading spinner
+  showLoading();
+
+  // get data from this endpoint
+  const data = await fetchJsonData("https://swapi.dev/api/planets/?page=1")
+
+  // make the planets table
+  var temp = "";
+  data.results.forEach((planet) => {
+    temp += "<tr>";
+    temp += "<td>" + planet.name + "</td>";
+    temp += "<td>" + planet.orbital_period + "</td>";
+    temp += "</tr>";
+  });
+  document.getElementById("planet-data").innerHTML = temp;
+
+  // show data
+  document.getElementById("loading").classList.add('hidden')
+  document.getElementById("planet-table").classList.remove('hidden')
+}
+
+function showLoading() {
+  document.getElementById("loading").classList.remove('hidden')
+  document.getElementById("character-table").classList.add('hidden')
+  document.getElementById("planet-table").classList.add('hidden')
 }

@@ -3,18 +3,39 @@
   <head>
     <title>Star Wars database</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="main.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body onload="fetchCharacters()">
-  <h1>Star Wars database</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Birth year</th>
-        </tr>
-      </thead>
-      <tbody id="data"></tbody>
-    </table>
+  <body class="m-6">
+    <div class="mx-auto w-[50rem]">
+      <h1 class="text-3xl font-bold mb-4">Star Wars database</h1>
+      <div class="flex gap-3 my-4">
+        <button class="px-2.5 py-2 bg-blue-100 rounded-lg hover:bg-blue-200 active:bg-blue-300" onclick="fetchCharacters()">Characters</button>
+        <button class="px-2.5 py-2 bg-orange-100 rounded-lg hover:bg-orange-200 active:bg-orange-300" onclick="fetchPlanets()">Planets</button>
+      </div>
+
+      <div id="loading" class="hidden">Loading...</div>
+
+      <table id="character-table" class="hidden">
+        <thead>
+          <tr class="border-b-2 border-blue-500">
+            <th class="w-48 pb-1 text-left">Name</th>
+            <th class="w-28 pb-1 text-left">Birth year</th>
+          </tr>
+        </thead>
+        <tbody id="character-data"></tbody>
+      </table>
+
+      <table id="planet-table" class="hidden">
+        <thead>
+          <tr class="border-b-2 border-orange-500">
+            <th class="w-36 pb-1 text-left">Name</th>
+            <th class="w-28 pb-1 text-left">Days in year</th>
+          </tr>
+        </thead>
+        <tbody id="planet-data"></tbody>
+      </table>
+    </div>
   </body>
 </html>
