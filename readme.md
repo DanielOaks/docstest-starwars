@@ -6,9 +6,9 @@ Below are the decisions I made while putting this together.
 
 ## Commentary
 
-The first thing I ask when looking at this project is "What kind of tutorial?", so I can put together a short list of references for how my tutorial should look and feel. Note that these don't need to be perfect – they give us a rough reference of what to include, how to talk to the audience, etc.
+The first thing I ask when looking at this project is "What kind of tutorial?". This lets me put together a short list of references for how my tutorial should look and feel. Note, these don't need to be perfect – they just give us a rough reference of what to include, how to talk to the audience, etc.
 
-Here are my tutorial references for this project:
+Here are my references for this project:
 
 - https://buildkite.com/docs/tutorials/pipeline-upgrade
 - https://buildkite.com/docs/pipelines/secrets
