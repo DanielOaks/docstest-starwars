@@ -2,11 +2,18 @@
 
 There are many ways to get information about Star Wars, but the simplest is with the [Star Wars API (swapi.dev)](https://swapi.dev/). This API collects information about the films, characters, and planets throughout the series.
 
-In this tutorial we'll show you how to pull data from this API and display it in a table.
+In this tutorial we'll show you how to pull data from this API and display it in a table:
+
+- [Step 1: Basic HTML and Javascript](#step-1-basic-html-and-javascript)
+- [Step 2: Grabbing the data](#step-2-grabbing-the-data)
+- [Step 3. Waiting for the page to load](#step-3-waiting-for-the-page-to-load)
+- [Step 4: Updating the table](#step-4-updating-the-table)
+- [Step 5: Displaying our data](#step-5-displaying-our-data)
+
 
 ## Step 1: Basic HTML and Javascript
 
-Let's start by creating some basic HTML:
+Let's start by creating some basic HTML. We've included a script tag to include our JS and a table for our data:
 
 ```html
 <!DOCTYPE html>
@@ -35,8 +42,6 @@ Let's start by creating some basic HTML:
 </html>
 ```
 
-We've included a script tag to include our JS and a table for our data.
-
 
 ## Step 2: Grabbing the data
 
@@ -58,11 +63,9 @@ const data = await response.json();
 console.log(data);
 ```
 
-If we include this in our `<script>` tag and reload the page, we can see the data appear in our console:
+Using the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) makes it easy to call external APIs. If we include this in our `<script>` tag and reload the page, we can see the data appear in our console:
 
 ![People data shown in the browser's console](tutorial/console-screenshot-1.png)
-
-Using the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) makes it easy to grab this data.
 
 
 ## Step 3. Waiting for the page to load
@@ -92,7 +95,7 @@ document.addEventListener("DOMContentLoaded", fetchCharacters);
 
 This will call the `fetchCharacters` function once the page has loaded and is ready. You should see the same data appear in the console after reloading the page.
 
-At this point, here's what your HTML should look like:
+At this point, here's what our HTML and code looks like:
 
 ```html
 
@@ -241,12 +244,12 @@ And here's what it looks like when put together:
 
 ![Table showing all the character entries](tutorial/webpage-2.png)
 
-And we're finished, you've got your page grabbing data from the Star Wars API and displaying it on your page!
-
 
 ## Expanding on this
 
-There are a number of ways to extend this sample page. For example, you can:
+We're now finished, you've got your page grabbing data from the Star Wars API and displaying it! But there are many ways to extend this sample page.
+
+You can:
 
 - Use CSS to improve the page's style.
 - Put the Javscript into a separate file to make it easier to read.
