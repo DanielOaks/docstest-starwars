@@ -9,6 +9,7 @@ In this tutorial we'll show you how to pull data from this API and display it in
 - [Step 3. Waiting for the page to load](#step-3-waiting-for-the-page-to-load)
 - [Step 4: Updating the table](#step-4-updating-the-table)
 - [Step 5: Displaying our data](#step-5-displaying-our-data)
+- [Step 6: Styling](#step-6-styling)
 
 
 ## Step 1: Basic HTML and Javascript
@@ -205,7 +206,7 @@ document.getElementById("data").replaceChildren(...rows);
 
 ---
 
-With all the above changes, here's our final `fetchCharacters` function:
+With the above changes, here's our final `fetchCharacters` function:
 
 ```js
 async function fetchCharacters() {
@@ -241,6 +242,9 @@ async function fetchCharacters() {
 And here's what the page looks like:
 
 ![Table showing all the character entries](tutorial/webpage-2.png)
+
+## Step 6: Styling
+
 
 
 ## Expanding on this
