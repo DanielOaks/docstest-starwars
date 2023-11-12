@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Star Wars database</title>
+    <meta charset="UTF-8" />
+
+    <!-- javascript -->
+    <script>
+      async function fetchCharacters() {
+        let url = "https://swapi.dev/api/people/?page=1";
+
+        let response = await fetch(url);
+        const data = await response.json();
+
+        let rows = [];
+        data.results.forEach(character => {
+          // create the new row
+          let row = document.createElement("tr");
+
+          // add the name and birth year columns
+          let name = document.createElement("td");
+          name.textContent = character.name;
+          row.appendChild(name);
+
+          let year = document.createElement("td");
+          year.textContent = character.birth_year;
+          row.appendChild(year);
+
+          // add to our rows
+          rows.push(row)
+        });
+
+        document.getElementById("data").replaceChildren(...rows);
+      }
+
+      document.addEventListener("DOMContentLoaded", fetchCharacters);
+    </script>
+  </head>
+  <body>
+    <h1>Star Wars database</h1>
+
+    <!-- characters table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Birth year</th>
+        </tr>
+      </thead>
+      <tbody id="data"></tbody>
+    </table>
+  </body>
+</html>

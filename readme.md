@@ -13,6 +13,7 @@ Here are my references for this project:
 - https://buildkite.com/docs/tutorials/pipeline-upgrade
 - https://buildkite.com/docs/pipelines/secrets
 - https://stateful.com/blog/discord-rest-api
+- https://buildkite.com/blog/fixing-flaky-tests
 
 
 
@@ -20,5 +21,5 @@ Here are my references for this project:
 
 - Styling
   - **Why TailwindCSS?** I've been using TailwindCSS lately for a few projects, and have been liking it! I decided to use it here as well. It's a little painful because the intellisense in VS Code doesn't work (you need a proper project setup to have it work, not just using the CDN), but it produces some simple, nice-looking results easily.
-  - **Why so simple?** Since this is more of a technical writing task, I didn't want to go overboard on the design. Nice, simple, with small bits of colour to separate characters from planets.
+  - **Why so simple?** Since this is more of a technical writing task, I didn't want to go overboard on the design. Nice, simple, with small bits of colour to separate characters from planets. Keeping the html simple also makes it easier for those reading the tutorial to understand what's going on.
 - 

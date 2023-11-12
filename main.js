@@ -2,6 +2,18 @@
   * Fetch and display Star Wars character data.
   */
 
+let currentPage = 1;
+
+// set the new page number
+function setPage(newPage) {
+  if (newPage < 1) {
+    return;
+  }
+
+  currentPage = newPage;
+  document.getElementById("page").innerText = newPage.toString();
+}
+
 // simple, naive json fetching
 async function fetchJsonData(url) {
   let response = await fetch(url);
@@ -13,18 +25,25 @@ async function fetchCharacters() {
   // show loading spinner
   startLoading();
 
-  // get data from this endpoint
-  const data = await fetchJsonData("https://swapi.dev/api/people/?page=1")
+  // get data
+  const data = await fetchJsonData("https://swapi.dev/api/people/?page=" + currentPage.toString())
 
-  // make the character table
-  var temp = "";
-  data.results.forEach((character) => {
-    temp += "<tr>";
-    temp += "<td>" + character.name + "</td>";
-    temp += "<td>" + character.birth_year + "</td>";
-    temp += "</tr>";
+  let rows = [];
+  data.results.forEach(character => {
+    let row = document.createElement("tr");
+
+    let name = document.createElement("td");
+    name.textContent = character.name;
+    row.appendChild(name);
+
+    let year = document.createElement("td");
+    year.textContent = character.birth_year;
+    row.appendChild(year);
+
+    rows.push(row)
   });
-  document.getElementById("character-data").innerHTML = temp;
+
+  document.getElementById("character-data").replaceChildren(...rows);
 
   // show data
   document.getElementById("loading").classList.add('hidden')
@@ -35,18 +54,25 @@ async function fetchPlanets() {
   // show loading spinner
   startLoading();
 
-  // get data from this endpoint
-  const data = await fetchJsonData("https://swapi.dev/api/planets/?page=1")
+  // get data
+  const data = await fetchJsonData("https://swapi.dev/api/planets/?page=" + currentPage.toString())
 
-  // make the planets table
-  var temp = "";
-  data.results.forEach((planet) => {
-    temp += "<tr>";
-    temp += "<td>" + planet.name + "</td>";
-    temp += "<td>" + planet.orbital_period + "</td>";
-    temp += "</tr>";
+  let rows = [];
+  data.results.forEach(planet => {
+    let row = document.createElement("tr");
+
+    let name = document.createElement("td");
+    name.textContent = planet.name;
+    row.appendChild(name);
+
+    let orbital_period = document.createElement("td");
+    orbital_period.textContent = planet.orbital_period;
+    row.appendChild(orbital_period);
+
+    rows.push(row)
   });
-  document.getElementById("planet-data").innerHTML = temp;
+
+  document.getElementById("planet-data").replaceChildren(...rows);
 
   // show data
   document.getElementById("loading").classList.add('hidden')

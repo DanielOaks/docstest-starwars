@@ -14,6 +14,12 @@
         <button class="px-2.5 py-2 bg-blue-100 rounded-lg hover:bg-blue-200 active:bg-blue-300" onclick="fetchCharacters()">Characters</button>
         <button class="px-2.5 py-2 bg-orange-100 rounded-lg hover:bg-orange-200 active:bg-orange-300" onclick="fetchPlanets()">Planets</button>
       </div>
+      <div class="flex gap-3 my-4 items-center">
+        <span>Page:</span>
+        <button class="px-2.5 py-1 bg-gray-100 rounded-lg hover:bg-gray-200 active:bg-gray-300" onclick="setPage(currentPage - 1)">Prev</button>
+        <span id="page">1</span>
+        <button class="px-2.5 py-1 bg-gray-100 rounded-lg hover:bg-gray-200 active:bg-gray-300" onclick="setPage(currentPage + 1)">Next</button>
+      </div>
 
       <div id="loading" class="hidden">Loading...</div>
 
