@@ -171,9 +171,9 @@ data.results.forEach(character => {
 });
 ```
 
-This loops through each character from the result and prints it out.
+This loops through each character from the result and prints it out. You can use this to see which attributes you want to display in your table.
 
-Instead of just printing the characters, let's create a row for each. The easiest way to do this would be to make it from a string, above. But creating HTML elements from API data can introduce vulnerabilities, so let's do this in a smarter way.
+Now instead of just printing the characters, let's create a row for each one:
 
 ```js
 let rows = [];
@@ -195,9 +195,9 @@ data.results.forEach(character => {
 });
 ```
 
-> 📘 Note: Using the [`textContent` attribute](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent) means that even if the API returns bad data or HTML, that can't affect our page!
+> 📘 Note: We're creating the elements this way, instead of making a string like we did for Alice, because this is safer if the API returns bad data. Take a look at the [`textContent` attribute](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent) for more details.
 
-Now we have a list of rows for our table. Let's use a relatively new Javascript method, [`replaceChildren`](https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren):
+Now that we have a list of rows, let's add them to our table with the [`replaceChildren` method](https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceChildren):
 
 ```js
 document.getElementById("data").replaceChildren(...rows);
@@ -205,7 +205,7 @@ document.getElementById("data").replaceChildren(...rows);
 
 ---
 
-With all of those changes, here's what our `fetchCharacters` function looks like:
+With all the above changes, here's our final `fetchCharacters` function:
 
 ```js
 async function fetchCharacters() {
@@ -238,9 +238,7 @@ async function fetchCharacters() {
 }
 ```
 
-It may look like a lot of code, but it's doing things in a safe way.
-
-And here's what it looks like when put together:
+And here's what the page looks like:
 
 ![Table showing all the character entries](tutorial/webpage-2.png)
 
