@@ -2,6 +2,8 @@
 
 The [tutorial file](./tutorial.md) tells you how to make use of the [Star Wars API](https://swapi.dev/).
 
+Here are the live versions of [the extended page](https://danieloaks-docstest-starwars.netlify.app/) and [the tutorial page](https://danieloaks-docstest-starwars.netlify.app/test.html).
+
 Below are the decisions I made while putting this together, as well as some commentary along the way.
 
 

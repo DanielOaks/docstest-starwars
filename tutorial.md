@@ -311,6 +311,8 @@ We've got an extended example including the above features, and some more stylin
 - HTML: [`index.html`](./index.html)
 - Javascript: [`main.js`](./main.js)
 
+And I've got a live version of this extended sample [hosted here](https://danieloaks-docstest-starwars.netlify.app/).
+
 This implements many of the above features, and you can click the Characters or Planets page to see it in action. Here's what the extended page looks like:
 
 ![Extended page with styling, characters and planets button, and pagination](tutorial/extended-1.png)
