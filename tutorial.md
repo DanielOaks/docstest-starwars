@@ -243,27 +243,76 @@ And here's what the page looks like:
 
 ![Table showing all the character entries](tutorial/webpage-2.png)
 
+
 ## Step 6: Styling
 
+Now that we've got our page loading and showing data, let's make it look nice!
+
+Generally, you'd add a `style` tag or a new file for your CSS. But the [Tailwind CSS framework](https://tailwindcss.com/) takes a different approach.
+
+Instead of writing your styles in another file or as a separate block, it defines a set of classes to do everything you need. And you use these classes on the elements you want to style. The benefit is that your styling lives alongside your markup, so you don't need to think as much.
+
+---
+
+Let's start making use of Tailwind for this project:
+
+```diff
+ <head>
+   <title>Star Wars database</title>
+   <meta charset="UTF-8" />
++  <script src="https://cdn.tailwindcss.com"></script>
+```
+
+Adding this tag lets us start using the Tailwind classes. Let's start off with the header:
+
+```html
+<h1 class="text-3xl font-bold mb-4">Star Wars database</h1>
+```
+
+This makes the header large, bold, and adds `16px` of padding underneath it. Tailwind also sets some defaults including a sans-serif font stack.
+
+With the new header and font stack, here's what the page looks like:
+
+![New bold header with Tailwind CSS](tutorial/twilwind-1.png)
+
+Pretty! Let's add some padding to the body and improve that table:
+
+```html
+<body class="p-6"> <!-- 24px of padding -->
+  <h1 class="text-3xl font-bold mb-4">Star Wars database</h1>
+
+  <table>
+    <thead>
+      <tr class="border-b-2 border-blue-500"> <!-- 2px blue border on the bottom -->
+        <th class="w-48 pb-1 text-left">Name</th> <!-- minimum width of 12rem, padding at bottom, and left-align the text -->
+        <th class="w-28 pb-1 text-left">Birth year</th>
+```
+
+And here's how the final table looks:
+
+![Final table with blue border and nice columns](tutorial/tailwind-2.png)
+
+There's much more you can do to improve the styling, but this is a good, simple start!
 
 
 ## Expanding on this
 
-We're now finished, you've got your page grabbing data from the Star Wars API and displaying it! But there are many ways to extend this sample page.
+We're now finished, and you've got your page grabbing data from the Star Wars API and displaying it. But there are many ways to extend this sample page.
 
 You can:
 
-- Use CSS to improve the page's style.
-- Put the Javscript into a separate file to make it easier to read.
-- Add next and previous buttons, which change the page being displayed.
-- Add buttons to grab the characters, planets, and other data from the API.
+- Put the Javscript in a separate file.
+- Add next and previous buttons, to change the page being displayed.
+- Add buttons to grab the characters, planets, and optionally other data from the API.
 - Show a 'loading' spinner while the data is fetched.
 
-We've got an extended example including the above features:
+We've got an extended example including the above features, and some more styling:
 
 - HTML: [`index.html`](./index.html)
 - Javascript: [`main.js`](./main.js)
 
-The code is more complex, but uses the above as a base. And this extended page looks like this:
+This implements many of the above features, and you can click the Characters or Planets page to see it in action. Here's what the extended page looks like:
 
 ![Extended page with styling, characters and planets button, and pagination](tutorial/extended-1.png)
+
+If you have any questions or comments, please reach out to <daniel@danieloaks.net>.

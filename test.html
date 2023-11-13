@@ -3,6 +3,7 @@
   <head>
     <title>Star Wars database</title>
     <meta charset="UTF-8" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- javascript -->
     <script>
@@ -36,15 +37,14 @@
       document.addEventListener("DOMContentLoaded", fetchCharacters);
     </script>
   </head>
-  <body>
-    <h1>Star Wars database</h1>
+  <body class="p-6">
+    <h1 class="text-3xl font-bold mb-4">Star Wars database</h1>
 
-    <!-- characters table -->
     <table>
       <thead>
-        <tr>
-          <th>Name</th>
-          <th>Birth year</th>
+        <tr class="border-b-2 border-blue-500">
+          <th class="w-48 pb-1 text-left">Name</th>
+          <th class="w-28 pb-1 text-left">Birth year</th>
         </tr>
       </thead>
       <tbody id="data"></tbody>
