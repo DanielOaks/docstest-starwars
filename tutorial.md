@@ -10,6 +10,7 @@ In this tutorial we'll show you how to pull data from this API and display it in
 - [Step 4: Updating the table](#step-4-updating-the-table)
 - [Step 5: Displaying our data](#step-5-displaying-our-data)
 - [Step 6: Styling](#step-6-styling)
+- [Next steps](#next-steps)
 
 
 ## Step 1: Basic HTML and Javascript
@@ -288,14 +289,14 @@ Pretty! Let's add some padding to the body and improve that table:
         <th class="w-28 pb-1 text-left">Birth year</th>
 ```
 
-And here's how the final table looks:
+There's much more you can do to improve the styling, but this is a good, simple start!
+
+Here's how the final table looks:
 
 ![Final table with blue border and nice columns](tutorial/tailwind-2.png)
 
-There's much more you can do to improve the styling, but this is a good, simple start!
 
-
-## Expanding on this
+## Next steps
 
 We're now finished, and you've got your page grabbing data from the Star Wars API and displaying it. But there are many ways to extend this sample page.
 
